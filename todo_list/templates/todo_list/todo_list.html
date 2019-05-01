@@ -1,0 +1,20 @@
+{% extends 'todo_list/base.html' %}
+
+{% block content %}
+
+{% for todo in todo %}
+  
+  {% if todo.status == "Doing" %}
+        <h3><a href="{% url 'Detail_list' pk=todo.pk %}" style=" color: yellow">{{todo.task}} </a></h1>
+        <p>status - {{todo.status}}</p>
+  {% endif %}
+  {% if todo.status == "Done" %}
+        <h3><a href="{% url 'Detail_list' pk=todo.pk %}" style=" color: green">{{todo.task}} </a></h1>
+        <p>status - {{todo.status}}</p>
+  {% endif %}
+  {% if todo.status == "Canceled" %}
+        <h3><a href="{% url 'Detail_list' pk=todo.pk %}" style=" color: red">{{todo.task}} </a></h1>
+        <p>status - {{todo.status}}</p>
+  {% endif %}
+{% endfor %}
+{% endblock %}

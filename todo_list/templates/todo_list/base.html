@@ -1,0 +1,27 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Todo Apps</title>
+	<style type="text/css">
+		.header {
+  			background-color: #F1F1F1;
+  			text-align:center;
+  			padding: 15px;
+				}
+	</style>
+</head>
+<body>
+	<div class="header">
+		
+		<h1><a href="/" class="TodoAp">Todo Apps</a></h1><a href="{% url 'TodoNew' %}">Add new todo list</a>
+	</div>
+
+<hr/>
+    {% block content %}
+    {% endblock %} 
+
+</body>
+</html>
